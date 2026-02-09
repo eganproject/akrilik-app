@@ -1,4 +1,4 @@
-@extends('layouts.landing', ['title' => 'Media Gudang Acc'])
+@extends('layouts.landing', ['title' => 'Akrilik Teknika'])
 
 
 @section('custom_style')
@@ -8,16 +8,16 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#eefcfd',
-                            100: '#d0f6f9',
-                            200: '#a6edf2',
-                            300: '#6edfe6',
-                            400: '#33c6d1',
-                            500: '#21939F', // Primary Teal
-                            600: '#197682',
-                            700: '#16606a',
-                            800: '#174e57',
-                            900: '#16424a',
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444', // Primary Red
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
                             dark: '#0f172a'
                         }
                     },
@@ -53,8 +53,8 @@
                             '50%': { opacity: '.5' }
                         },
                         silhouetteGlow: {
-                            '0%, 100%': { opacity: '0.4', boxShadow: '0 0 2px rgba(33, 147, 159, 0)' },
-                            '50%': { opacity: '1', boxShadow: '0 0 15px rgba(33, 147, 159, 0.8)' }
+                            '0%, 100%': { opacity: '0.4', boxShadow: '0 0 2px rgba(239, 68, 68, 0)' },
+                            '50%': { opacity: '1', boxShadow: '0 0 15px rgba(239, 68, 68, 0.8)' }
                         },
                         popIn: {
                             '0%': { opacity: '0', transform: 'scale(0.95)' },
@@ -104,10 +104,10 @@
         .reveal-line.active { width: 100%; }
         
         /* Animated Borders for Product Cards */
-        .card-border-top { position: absolute; top: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, transparent, #21939F, transparent); transition: width 0.6s ease-out; z-index: 20; }
-        .card-border-right { position: absolute; top: 0; right: 0; width: 2px; height: 0; background: linear-gradient(180deg, transparent, #21939F, transparent); transition: height 0.6s ease-out 0.6s; z-index: 20; }
-        .card-border-bottom { position: absolute; bottom: 0; right: 0; width: 0; height: 2px; background: linear-gradient(270deg, transparent, #21939F, transparent); transition: width 0.6s ease-out 1.2s; z-index: 20; }
-        .card-border-left { position: absolute; bottom: 0; left: 0; width: 2px; height: 0; background: linear-gradient(0deg, transparent, #21939F, transparent); transition: height 0.6s ease-out 1.8s; z-index: 20; }
+        .card-border-top { position: absolute; top: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, transparent, #ef4444, transparent); transition: width 0.6s ease-out; z-index: 20; }
+        .card-border-right { position: absolute; top: 0; right: 0; width: 2px; height: 0; background: linear-gradient(180deg, transparent, #ef4444, transparent); transition: height 0.6s ease-out 0.6s; z-index: 20; }
+        .card-border-bottom { position: absolute; bottom: 0; right: 0; width: 0; height: 2px; background: linear-gradient(270deg, transparent, #ef4444, transparent); transition: width 0.6s ease-out 1.2s; z-index: 20; }
+        .card-border-left { position: absolute; bottom: 0; left: 0; width: 2px; height: 0; background: linear-gradient(0deg, transparent, #ef4444, transparent); transition: height 0.6s ease-out 1.8s; z-index: 20; }
 
         .reveal-item.active .card-border-top { width: 100%; }
         .reveal-item.active .card-border-right { height: 100%; }
@@ -118,9 +118,9 @@
         
         /* Mega Menu Styles */
         .category-item.active {
-            background-color: #f0f9ff;
-            color: #21939F;
-            border-right: 3px solid #21939F;
+            background-color: #fef2f2;
+            color: #ef4444;
+            border-right: 3px solid #ef4444;
         }
         /* Memastikan icon panah muncul saat aktif */
         .category-item.active svg {
@@ -151,12 +151,12 @@
             <div class="flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
                 <div class="text-white space-y-8 animate-fade-in-up flex flex-col items-center">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
                         <span class="text-sm font-medium tracking-wide">Penunjang Promosi Efektif</span>
                     </div>
                     <h1 class="font-display text-6xl lg:text-8xl font-bold leading-none tracking-tight drop-shadow-lg">
                         Pikat Perhatian  <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-cyan-200 to-white drop-shadow-sm">Pelanggan</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-brand-200 to-white drop-shadow-sm">Pelanggan</span>
                     </h1>
                     <p class="text-xl text-slate-100 max-w-2xl leading-relaxed font-light drop-shadow-md">
                         Media promosi fleksibel. Mudah dipasang, mudah dipindah, hasil maksimal.
@@ -282,17 +282,17 @@
             <div class="grid lg:grid-cols-2 gap-16 items-start mb-20">
                 <div class="reveal-item">
                     <h2 class="text-brand-600 font-bold tracking-[0.2em] uppercase text-sm mb-4 flex items-center gap-2">
-                        <span class="w-8 h-[2px] bg-brand-600 inline-block"></span> MENGAPA MGA?
+                        <span class="w-8 h-[2px] bg-brand-600 inline-block"></span> MENGAPA AT?
                     </h2>
                     <h3 class="font-display text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
                         Rasakan <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">Masa Depan Visual.</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-500">Masa Depan Visual.</span>
                     </h3>
                     <p class="text-slate-600 text-lg leading-relaxed max-w-lg">
                         Kami bukan sekadar vendor. Kami adalah arsitek pengalaman digital Anda yang menggabungkan estetika, teknologi, dan keandalan sistem.
                     </p>
                     <div class="mt-8 h-[2px] bg-slate-100 w-full relative overflow-visible rounded-full">
-                         <div class="reveal-line absolute top-0 left-0 h-full bg-gradient-to-r from-brand-500 via-cyan-400 to-brand-500 animate-silhouette-glow shadow-brand-500/50"></div>
+                         <div class="reveal-line absolute top-0 left-0 h-full bg-gradient-to-r from-brand-500 via-brand-400 to-brand-500 animate-silhouette-glow shadow-brand-500/50"></div>
                     </div>
                 </div>
                 <div class="reveal-item delay-200 relative hidden lg:block">

@@ -1,4 +1,4 @@
-@extends('layouts.landing', ['title' => 'Tentang MGA'])
+@extends('layouts.landing', ['title' => 'Tentang AT'])
 
 @section('custom_style')
     <script>
@@ -7,16 +7,16 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#eefcfd',
-                            100: '#d0f6f9',
-                            200: '#a6edf2',
-                            300: '#6edfe6',
-                            400: '#33c6d1',
-                            500: '#21939F', // Primary Teal
-                            600: '#197682',
-                            700: '#16606a',
-                            800: '#174e57',
-                            900: '#16424a',
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444', // Primary Red
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
                             dark: '#0f172a'
                         }
                     },
@@ -71,9 +71,9 @@
         }
 
         .category-item.active {
-            background-color: #f0f9ff;
-            color: #21939F;
-            border-right: 3px solid #21939F;
+            background-color: #fef2f2;
+            color: #ef4444;
+            border-right: 3px solid #ef4444;
         }
 
         .category-item.active svg {
@@ -114,7 +114,7 @@
 @section('content')
     @include('partials.headerSection', [
         'title_1' => 'Tentang',
-        'title_2' => 'Media Gudang Acc',
+        'title_2' => 'Akrilik Teknika',
         'description' => 'Solusi Advertising UMKM',
     ])
 
@@ -125,7 +125,7 @@
                 <div class="relative reveal-on-scroll">
                     <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200">
                         <img src="{{ asset('public/assets/images/about.jpeg') }}"
-                            alt="MGA Office Team" class="w-full h-auto object-cover">
+                            alt="Akrilik Teknika Office Team" class="w-full h-auto object-cover">
                     </div>
                     <!-- Floater Stats -->
                     <div
@@ -135,14 +135,14 @@
                     </div>
                     <!-- Decorative Dots -->
                     <div
-                        class="absolute -top-4 -left-4 w-24 h-24 bg-[radial-gradient(#21939F_2px,transparent_2px)] [background-size:12px_12px] opacity-30">
+                        class="absolute -top-4 -left-4 w-24 h-24 bg-[radial-gradient(#ef4444_2px,transparent_2px)] [background-size:12px_12px] opacity-30">
                     </div>
                 </div>
 
                 <!-- Text Content -->
                 <div class="reveal-on-scroll" style="transition-delay: 200ms;">
                     <h2 class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">SIAPA KAMI</h2>
-                    <h3 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Tumbuh Bersama MGA !</h3>
+                    <h3 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Tumbuh Bersama AT !</h3>
                     <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
                         <p>
                             Media Gudang Acc adalah perusahaan yang fokus menyediakan beragam aksesoris pemasaran

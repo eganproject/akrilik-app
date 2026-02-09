@@ -9,16 +9,16 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#eefcfd',
-                            100: '#d0f6f9',
-                            200: '#a6edf2',
-                            300: '#6edfe6',
-                            400: '#33c6d1',
-                            500: '#21939F', // Primary Teal
-                            600: '#197682',
-                            700: '#16606a',
-                            800: '#174e57',
-                            900: '#16424a',
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444', // Primary Red
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
                             dark: '#0f172a'
                         }
                     },
@@ -57,9 +57,9 @@
         }
         
         .category-item.active {
-            background-color: #f0f9ff;
-            color: #21939F;
-            border-right: 3px solid #21939F;
+            background-color: #fef2f2;
+            color: #ef4444;
+            border-right: 3px solid #ef4444;
         }
         .category-item.active svg { opacity: 1 !important; }
 
