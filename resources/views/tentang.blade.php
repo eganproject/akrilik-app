@@ -145,7 +145,7 @@
                     <h3 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Tumbuh Bersama AT !</h3>
                     <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
                         <p>
-                            Media Gudang Acc adalah perusahaan yang fokus menyediakan beragam aksesoris pemasaran
+                            Akrilik Teknika (AT) adalah perusahaan yang fokus menyediakan beragam aksesoris pemasaran
                             berkualitas di Indonesia. Kami berdedikasi menjadi mitra terpercaya bagi bisnis-bisnis di
                             berbagai sektor yang membutuhkan produk pemasaran yang andal.
                         </p>
@@ -154,7 +154,7 @@
                             menjangkau toko-toko di berbagai wilayah di Indonesia.
                         </p>
                         <p>
-                            Sebagai distributor terpercaya, Media Gudang Acc memberikan pelayanan yang profesional dan
+                            Sebagai distributor terpercaya, Akrilik Teknika memberikan pelayanan yang profesional dan
                             produk-produk yang teruji kualitasnya.
                         </p>
                         <p>
@@ -170,7 +170,7 @@
                         <img src="{{ asset('public/assets/images/logo/logo.png') }}" alt="Signature"
                             class="h-10 opacity-50">
                         {{-- <div>
-                            <p class="text-slate-900 font-bold">Direksi MGA</p>
+                            <p class="text-slate-900 font-bold">Direksi AT</p>
                             <p class="text-slate-500 text-xs">Founder & CEO</p>
                         </div> --}}
                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.landing')
 
-@section('title', 'MGA App')
+@section('title', 'AT App')
 
 @section('custom_style')
 <script>

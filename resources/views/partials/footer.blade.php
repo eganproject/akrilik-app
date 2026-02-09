@@ -4,7 +4,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
                     <div class="flex items-center">
-                        <img src="{{ asset('public/assets/images/logo/logo.png') }}" alt="MGA DIGITAL" class="h-8 w-auto object-contain">
+                        <img src="{{ asset('public/assets/images/logo/logo.png') }}" alt="Akrilik Teknika" class="h-8 w-auto object-contain">
                     </div>
                     <span class="hidden md:block text-slate-700">|</span>
                     <p class="text-xs text-slate-600">&copy; 2026 Hak Cipta Dilindungi.</p>

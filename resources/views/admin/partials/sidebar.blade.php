@@ -3,7 +3,7 @@
         <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-sky-500 to-purple-500 flex items-center justify-center font-black text-slate-900">M</div>
         <div>
             <p class="text-sm text-slate-300">Admin Panel</p>
-            <p class="font-semibold">Media Gudang Acc</p>
+            <p class="font-semibold">Akrilik Teknika</p>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-@extends('layouts.landing', ['title' => 'Media Gudang Acc'])
+@extends('layouts.landing', ['title' => 'Akrilik Teknika'])
 
 @section('custom_style')
 <script>
@@ -197,15 +197,15 @@
                 <div class="lg:col-span-7 space-y-8">
                     <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm shadow-lg shadow-black/20 reveal-item">
                         <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
-                        <span class="text-xs uppercase tracking-[0.35em] text-slate-200">MGA Signature Visual</span>
+                        <span class="text-xs uppercase tracking-[0.35em] text-slate-200">Akrilik Teknika</span>
                     </div>
                     <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] reveal-item">
-                        Visual Mewah <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 via-white to-brand-300">untuk Brand</span>
-                        yang Ingin Tampil Maju.
+                        Display Akrilik <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 via-white to-brand-300">Rapi & Premium</span>
+                        untuk Brand, Toko, dan Kafe.
                     </h1>
                     <p class="text-lg sm:text-xl text-slate-200/90 max-w-2xl reveal-item">
-                        Media promosi premium dengan desain modern, pemasangan presisi, dan performa visual yang elegan untuk memikat pelanggan sejak pandangan pertama.
+                        Produk akrilik custom seperti frame poster, rak brosur, rak kopi, menu stand, dan display meja. Desain modern, potongan presisi, dan finishing bening untuk tampil profesional sejak pandangan pertama.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 reveal-item">
                         <a href="https://wa.me/6289517506300" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
@@ -240,11 +240,11 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-xs uppercase tracking-[0.35em] text-slate-300">Signature Kit</p>
-                                <h3 class="font-display text-2xl font-bold text-white">Executive Display Suite</h3>
+                                <h3 class="font-display text-2xl font-bold text-white">Acrylic Display Suite</h3>
                             </div>
                             <span class="px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200">2026</span>
                         </div>
-                        <p class="mt-4 text-slate-200/80 text-sm">Paket visual lengkap untuk showroom, kantor, dan retail premium dengan kualitas visual kelas flagship.</p>
+                        <p class="mt-4 text-slate-200/80 text-sm">Paket display akrilik untuk area kasir, meja promo, etalase, hingga booth event. Cocok untuk menonjolkan produk dan informasi penting.</p>
 
                         <div class="mt-6 overflow-hidden rounded-2xl border border-white/10">
                             <div class="h-40 w-full bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/about.jpeg') }}');"></div>
@@ -257,8 +257,8 @@
                                         <i data-lucide="sparkles" class="w-5 h-5"></i>
                                     </span>
                                     <div>
-                                        <p class="text-xs text-slate-300">Finishing</p>
-                                        <p class="text-sm font-semibold text-white">Premium Matte</p>
+                                        <p class="text-xs text-slate-300">Material</p>
+                                        <p class="text-sm font-semibold text-white">Akrilik Berkualitas</p>
                                     </div>
                                 </div>
                             </div>
@@ -268,8 +268,8 @@
                                         <i data-lucide="cpu" class="w-5 h-5"></i>
                                     </span>
                                     <div>
-                                        <p class="text-xs text-slate-300">System</p>
-                                        <p class="text-sm font-semibold text-white">Smart Sync</p>
+                                        <p class="text-xs text-slate-300">Custom</p>
+                                        <p class="text-sm font-semibold text-white">Ukuran & Branding</p>
                                     </div>
                                 </div>
                             </div>
@@ -279,8 +279,8 @@
                                         <i data-lucide="shield-check" class="w-5 h-5"></i>
                                     </span>
                                     <div>
-                                        <p class="text-xs text-slate-300">Garansi</p>
-                                        <p class="text-sm font-semibold text-white">Resmi 1 Tahun</p>
+                                        <p class="text-xs text-slate-300">Finishing</p>
+                                        <p class="text-sm font-semibold text-white">Bening & Rapi</p>
                                     </div>
                                 </div>
                             </div>
@@ -290,8 +290,8 @@
                                         <i data-lucide="zap" class="w-5 h-5"></i>
                                     </span>
                                     <div>
-                                        <p class="text-xs text-slate-300">Instalasi</p>
-                                        <p class="text-sm font-semibold text-white">48 Jam</p>
+                                        <p class="text-xs text-slate-300">Produksi</p>
+                                        <p class="text-sm font-semibold text-white">Cepat & Konsisten</p>
                                     </div>
                                 </div>
                             </div>
@@ -341,12 +341,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
                 <div class="reveal-item">
-                    <p class="text-brand-600 font-bold tracking-[0.3em] uppercase text-xs mb-3">Kategori Unggulan</p>
+                    <p class="text-brand-600 font-bold tracking-[0.3em] uppercase text-xs mb-3">Produk Akrilik</p>
                     <h2 class="font-display text-4xl md:text-5xl font-bold text-slate-900">
-                        Kurasi Display <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Paling Ikonik.</span>
+                        Jajaran Display Akrilik <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Favorit Bisnis.</span>
                     </h2>
                     <p class="text-slate-600 mt-4 max-w-2xl">
-                        Jelajahi jajaran produk dengan estetika premium, desain modern, dan fungsi maksimal untuk kebutuhan promosi kelas atas.
+                        Frame poster, rak brosur, rak kopi, menu stand, display meja, hingga signage. Semua bisa dibuat sesuai ukuran dan kebutuhan brand Anda.
                     </p>
                 </div>
                 <a href="/kategori" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
@@ -376,7 +376,7 @@
                                 <div class="mt-6 flex items-center justify-between">
                                     <div>
                                         <h4 class="text-lg font-display font-bold text-slate-900 group-hover:text-brand-600 transition-colors">{{ $cat?->name ?? 'Kategori' }}</h4>
-                                        <p class="text-xs text-slate-500">Premium Category</p>
+                                        <p class="text-xs text-slate-500">Produk Akrilik</p>
                                     </div>
                                     @if($cat)
                                         <a href="{{ route('kategori.show', $cat->slug) }}" class="w-11 h-11 rounded-full bg-slate-900 text-white flex items-center justify-center group-hover:bg-brand-600 transition">
@@ -402,12 +402,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-14 items-center mb-16">
                 <div class="reveal-item">
-                    <p class="text-brand-600 font-bold tracking-[0.3em] uppercase text-xs mb-3">Standar Mewah</p>
+                    <p class="text-brand-600 font-bold tracking-[0.3em] uppercase text-xs mb-3">Keunggulan Produksi</p>
                     <h3 class="font-display text-4xl md:text-5xl font-bold text-slate-900">
-                        Teknologi Visual <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Generasi Berikutnya.</span>
+                        Akrilik Presisi <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Finishing Bening.</span>
                     </h3>
                     <p class="text-slate-600 mt-5 text-lg">
-                        Kami memadukan estetika tinggi dengan teknologi terkini untuk menciptakan pengalaman visual yang terasa hidup, modern, dan presisi.
+                        Kami mengolah akrilik dengan cutting, bending, dan polishing presisi untuk hasil rapi, kuat, dan terlihat profesional di setiap sudut.
                     </p>
                     <div class="mt-8 h-[2px] bg-slate-200 w-full relative overflow-visible rounded-full max-w-[200px]">
                         <div class="reveal-line absolute top-0 left-0 h-full bg-gradient-to-r from-brand-500 via-brand-300 to-accent-500 animate-pulse-soft"></div>
@@ -422,22 +422,22 @@
                                     <i data-lucide="sparkles" class="w-6 h-6"></i>
                                 </span>
                                 <div>
-                                    <p class="text-xs uppercase tracking-[0.35em] text-slate-300">MGA Studio</p>
-                                    <h4 class="font-display text-2xl font-bold">Blueprint Visual Eksklusif</h4>
+                                    <p class="text-xs uppercase tracking-[0.35em] text-slate-300">AT Acrylic Lab</p>
+                                    <h4 class="font-display text-2xl font-bold">Blueprint Display Custom</h4>
                                 </div>
                             </div>
                             <div class="space-y-3 text-slate-200/80 text-sm">
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-brand-300"></span>
-                                    <p>Konsep desain premium & kurasi material berkelas.</p>
+                                    <p>Desain custom sesuai ukuran, fungsi, dan identitas brand.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-brand-300"></span>
-                                    <p>Kalibrasi warna dan detail finishing terverifikasi.</p>
+                                    <p>Cutting, bending, dan polishing untuk tepi halus.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-brand-300"></span>
-                                    <p>Integrasi digital signage dengan workflow modern.</p>
+                                    <p>Finishing rapi untuk tampilan bening dan profesional.</p>
                                 </div>
                             </div>
                             <div class="mt-8 flex items-center justify-between">
@@ -454,22 +454,22 @@
                     <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-5 border border-brand-100">
                         <i data-lucide="settings" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Instalasi Presisi</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Tim bersertifikasi memastikan pemasangan rapih, cepat, dan siap pakai untuk operasional langsung.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Potong Presisi</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Laser cutting akurat menjaga ukuran konsisten dan bentuk tetap rapi.</p>
                 </div>
                 <div class="reveal-item delay-100 group p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-500/40 hover:shadow-xl transition-all duration-500">
                     <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-5 border border-brand-100">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Quality Control Ketat</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Setiap unit melalui stress-test intensif dan kalibrasi warna demi output visual konsisten.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Finishing Halus</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Polishing detail membuat akrilik bening, bersih, dan nyaman dilihat.</p>
                 </div>
                 <div class="reveal-item delay-200 group p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-500/40 hover:shadow-xl transition-all duration-500">
                     <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-5 border border-brand-100">
                         <i data-lucide="headphones" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Dukungan Premium</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Tim support responsif dan garansi resmi memastikan investasi Anda tetap optimal.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Custom Fleksibel</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Bisa menyesuaikan ukuran, fungsi, dan branding sesuai kebutuhan bisnis.</p>
                 </div>
             </div>
         </div>
@@ -481,8 +481,8 @@
         <div class="absolute inset-0 hero-dots"></div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-4 text-center text-white">
-            <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 reveal-item">Siap Naik Kelas Bersama MGA?</h2>
-            <p class="text-slate-200 text-lg mb-10 max-w-3xl mx-auto reveal-item">Bangun pengalaman visual yang terasa modern, hidup, dan berkelas. Konsultasikan kebutuhan display Anda dengan tim kami sekarang.</p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 reveal-item">Siap Punya Display Akrilik yang Rapi?</h2>
+            <p class="text-slate-200 text-lg mb-10 max-w-3xl mx-auto reveal-item">Konsultasikan kebutuhan frame poster, rak brosur, rak kopi, dan display lainnya. Kami bantu dari desain sampai produksi.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-item">
                 <a href="https://wa.me/6289517506300" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
                     Hubungi Kami
