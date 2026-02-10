@@ -72,7 +72,7 @@
                                                         <a href="{{ route('produk.show', $prod->slug) }}" class="group block rounded-xl border border-slate-100 hover:border-brand-200 shadow-sm hover:shadow-md transition overflow-hidden bg-white h-full">
                                                             <div class="aspect-[4/3] bg-white p-2 flex items-center justify-center overflow-hidden">
                                                                 @if($prod->thumbnail)
-                                                                    <img src="{{ Storage::disk('public')->url($prod->thumbnail) }}" alt="{{ $prod->name }}" class="w-full h-full object-contain transition">
+                                                                    <img src="{{ \App\Support\MediaUrl::publicStorage($prod->thumbnail) }}" alt="{{ $prod->name }}" class="w-full h-full object-contain transition">
                                                                 @else
                                                                     <span class="text-sm text-slate-400">{{ $prod->name }}</span>
                                                                 @endif

@@ -39,7 +39,7 @@
         </div>
         <div id="image-preview" class="flex items-center gap-3 {{ empty($category->image) ? 'hidden' : '' }}">
             <span class="text-xs text-slate-400">Pratinjau:</span>
-            <img id="image-preview-img" src="{{ !empty($category->image) ? Storage::disk('public')->url($category->image) : '' }}" alt="Preview" class="h-16 w-20 rounded-lg object-cover">
+            <img id="image-preview-img" src="{{ !empty($category->image) ? \App\Support\MediaUrl::publicStorage($category->image) : '' }}" alt="Preview" class="h-16 w-20 rounded-lg object-cover">
         </div>
 
         <label class="inline-flex items-center gap-2 text-sm text-slate-200">

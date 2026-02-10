@@ -58,7 +58,7 @@
                             <td class="px-4 py-3">
                                 <div class="flex items-center gap-3">
                                     @if($product->thumbnail)
-                                        <img src="{{ Storage::disk('public')->url($product->thumbnail) }}" alt="{{ $product->name }}" class="h-12 w-16 rounded-lg object-cover flex-shrink-0">
+                                        <img src="{{ \App\Support\MediaUrl::publicStorage($product->thumbnail) }}" alt="{{ $product->name }}" class="h-12 w-16 rounded-lg object-cover flex-shrink-0">
                                     @else
                                         <div class="h-12 w-16 rounded-lg bg-slate-800/80 border border-slate-700 flex items-center justify-center text-xs text-slate-500 flex-shrink-0">No Img</div>
                                     @endif

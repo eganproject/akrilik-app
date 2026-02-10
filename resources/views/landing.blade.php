@@ -366,7 +366,7 @@
                             <div class="relative z-10">
                                 <div class="h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 shadow-sm">
                                     @if($cat?->image)
-                                        <img src="{{ Storage::disk('public')->url($cat->image) }}" alt="{{ $cat->name }}" class="h-full w-auto object-contain drop-shadow-md animate-float">
+                                        <img src="{{ \App\Support\MediaUrl::publicStorage($cat->image) }}" alt="{{ $cat->name }}" class="h-full w-auto object-contain drop-shadow-md animate-float">
                                     @else
                                         <div class="h-28 w-28 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xl animate-float">
                                             {{ strtoupper(substr($cat->name ?? 'X',0,2)) }}

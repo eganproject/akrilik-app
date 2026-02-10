@@ -123,7 +123,7 @@
                     <a href="{{ route('produk.show', $product->slug) }}" class="product-item group cursor-pointer block">
                         <div class="relative aspect-[4/3] flex items-center justify-center mb-6 overflow-visible">
                             @if($product->thumbnail)
-                                <img src="{{ Storage::disk('public')->url($product->thumbnail) }}" alt="{{ $product->name }}" class="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-xl">
+                                <img src="{{ \App\Support\MediaUrl::publicStorage($product->thumbnail) }}" alt="{{ $product->name }}" class="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-xl">
                             @else
                                 <div class="w-full h-full bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center text-slate-400 text-sm font-semibold">{{ strtoupper(substr($product->name, 0, 2)) }}</div>
                             @endif

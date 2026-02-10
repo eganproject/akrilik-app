@@ -94,7 +94,7 @@
                         <div class="h-48 w-full flex items-center justify-center mb-6 relative">
                              <div class="absolute inset-0 bg-brand-500/5 blur-2xl rounded-full scale-50 group-hover:scale-100 transition-transform duration-500"></div>
                              @if($cat->image)
-                                <img src="{{ Storage::disk('public')->url($cat->image) }}" alt="{{ $cat->name }}" class="h-full w-auto object-contain drop-shadow-md animate-float relative z-10">
+                                <img src="{{ \App\Support\MediaUrl::publicStorage($cat->image) }}" alt="{{ $cat->name }}" class="h-full w-auto object-contain drop-shadow-md animate-float relative z-10">
                              @else
                                 <div class="h-32 w-32 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xl animate-float relative z-10">{{ strtoupper(substr($cat->name,0,2)) }}</div>
                              @endif

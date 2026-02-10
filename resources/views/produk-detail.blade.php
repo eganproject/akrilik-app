@@ -95,7 +95,7 @@
                     @endphp
                     <div id="main-image-wrapper" class="group relative bg-white rounded-2xl border-2 border-slate-50 flex items-center justify-center overflow-hidden shadow-sm cursor-zoom-in w-full h-[320px] sm:h-[360px] md:h-[420px] lg:h-[451px] max-w-full mx-auto">
                         @if($activeImage?->file_path)
-                            <img id="main-product-image" src="{{ Storage::disk('public')->url($activeImage->file_path) }}" alt="{{ $activeImage->alt_text ?? $product->name }}" class="w-full h-full object-contain transition-transform duration-300 ease-out">
+                            <img id="main-product-image" src="{{ \App\Support\MediaUrl::publicStorage($activeImage->file_path) }}" alt="{{ $activeImage->alt_text ?? $product->name }}" class="w-full h-full object-contain transition-transform duration-300 ease-out">
                         @else
                             <div class="h-full w-full flex items-center justify-center text-3xl font-display text-slate-400">{{ strtoupper(substr($product->name,0,2)) }}</div>
                         @endif
@@ -114,8 +114,8 @@
                     @if($gallery->count())
                         <div class="mt-2 flex flex-wrap gap-3 max-w-[500px] mx-auto justify-center sm:justify-start">
                             @foreach($gallery as $img)
-                                <button class="thumb-btn w-[84px] h-[84px] sm:w-[92px] sm:h-[92px] md:w-[100px] md:h-[100px] rounded-xl border {{ $loop->first ? 'border-brand-300 ring-2 ring-brand-200' : 'border-slate-200' }} bg-white overflow-hidden" data-index="{{ $loop->index }}" data-src="{{ Storage::disk('public')->url($img->file_path) }}" data-alt="{{ $img->alt_text ?? $product->name }}">
-                                    <img src="{{ Storage::disk('public')->url($img->file_path) }}" alt="{{ $img->alt_text ?? $product->name }}" class="w-full h-full object-cover">
+                                <button class="thumb-btn w-[84px] h-[84px] sm:w-[92px] sm:h-[92px] md:w-[100px] md:h-[100px] rounded-xl border {{ $loop->first ? 'border-brand-300 ring-2 ring-brand-200' : 'border-slate-200' }} bg-white overflow-hidden" data-index="{{ $loop->index }}" data-src="{{ \App\Support\MediaUrl::publicStorage($img->file_path) }}" data-alt="{{ $img->alt_text ?? $product->name }}">
+                                    <img src="{{ \App\Support\MediaUrl::publicStorage($img->file_path) }}" alt="{{ $img->alt_text ?? $product->name }}" class="w-full h-full object-cover">
                                 </button>
                             @endforeach
                         </div>
@@ -151,9 +151,9 @@
                         <p class="text-sm font-semibold text-slate-700">Varian</p>
                         <div class="flex flex-wrap gap-3">
                             @foreach($variants as $variant)
-                                <button class="variant-btn flex items-center gap-3 rounded-2xl border {{ $loop->first && !($gallery->count()) ? 'border-brand-300 ring-2 ring-brand-200' : 'border-slate-200' }} bg-white px-3 py-2 transition hover:border-brand-300" data-src="{{ Storage::disk('public')->url($variant->image_path) }}" data-alt="{{ $variant->alt_text ?? $variant->name }}">
+                                <button class="variant-btn flex items-center gap-3 rounded-2xl border {{ $loop->first && !($gallery->count()) ? 'border-brand-300 ring-2 ring-brand-200' : 'border-slate-200' }} bg-white px-3 py-2 transition hover:border-brand-300" data-src="{{ \App\Support\MediaUrl::publicStorage($variant->image_path) }}" data-alt="{{ $variant->alt_text ?? $variant->name }}">
                                     <span class="w-12 h-12 rounded-xl border border-slate-100 overflow-hidden flex items-center justify-center bg-slate-50">
-                                        <img src="{{ Storage::disk('public')->url($variant->image_path) }}" alt="{{ $variant->alt_text ?? $variant->name }}" class="w-full h-full object-cover">
+                                        <img src="{{ \App\Support\MediaUrl::publicStorage($variant->image_path) }}" alt="{{ $variant->alt_text ?? $variant->name }}" class="w-full h-full object-cover">
                                     </span>
                                     <span class="text-xs sm:text-sm font-medium text-slate-700">{{ $variant->name }}</span>
                                 </button>

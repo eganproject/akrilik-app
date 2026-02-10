@@ -58,7 +58,7 @@
                 <p class="text-xs text-slate-400">Gambar opsional, maks 2MB.</p>
                 <div id="thumbnail-preview" class="flex items-center gap-3 {{ empty($product->thumbnail) ? 'hidden' : '' }}">
                     <span class="text-xs text-slate-400">Pratinjau:</span>
-                    <img id="thumbnail-preview-img" src="{{ !empty($product->thumbnail) ? Storage::disk('public')->url($product->thumbnail) : '' }}" alt="Preview" class="h-16 w-20 rounded-lg object-cover">
+                    <img id="thumbnail-preview-img" src="{{ !empty($product->thumbnail) ? \App\Support\MediaUrl::publicStorage($product->thumbnail) : '' }}" alt="Preview" class="h-16 w-20 rounded-lg object-cover">
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                     <div class="mt-2 space-y-2">
                         @foreach($product->images as $img)
                             <div class="grid grid-cols-[120px_1fr_auto] gap-3 items-center rounded-lg border border-slate-800 bg-slate-800/50 p-3">
-                                <div class="relative h-20 w-full rounded-md overflow-hidden border border-slate-700 existing-preview" data-id="{{ $img->id }}" style="background-image:url('{{ Storage::disk('public')->url($img->file_path) }}'); background-size:cover; background-position:center;">
+                                <div class="relative h-20 w-full rounded-md overflow-hidden border border-slate-700 existing-preview" data-id="{{ $img->id }}" style="background-image:url('{{ \App\Support\MediaUrl::publicStorage($img->file_path) }}'); background-size:cover; background-position:center;">
                                 </div>
                                 <div class="space-y-2">
                                     <label class="block text-xs text-slate-400">Ganti gambar (opsional, maks 2MB)</label>
@@ -110,7 +110,7 @@
                     <div class="mt-2 space-y-2">
                         @foreach($product->variants as $variant)
                             <div class="grid grid-cols-[120px_1fr_auto] gap-3 items-center rounded-lg border border-slate-800 bg-slate-800/50 p-3">
-                                <div class="relative h-20 w-full rounded-md overflow-hidden border border-slate-700 existing-variant-preview" data-id="{{ $variant->id }}" style="background-image:url('{{ Storage::disk('public')->url($variant->image_path) }}'); background-size:cover; background-position:center;">
+                                <div class="relative h-20 w-full rounded-md overflow-hidden border border-slate-700 existing-variant-preview" data-id="{{ $variant->id }}" style="background-image:url('{{ \App\Support\MediaUrl::publicStorage($variant->image_path) }}'); background-size:cover; background-position:center;">
                                 </div>
                                 <div class="space-y-2">
                                     <label class="block text-xs text-slate-400">Nama varian</label>
