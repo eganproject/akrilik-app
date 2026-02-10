@@ -1,6 +1,7 @@
 @php use Illuminate\Support\Str; @endphp
 
 @php
+    $product = $product ?? new \App\Models\Product();
     $slugPreview = old('name')
         ? Str::slug(old('name'))
         : ($product->slug ?? Str::slug($product->name ?? ''));
@@ -87,6 +88,42 @@
                                         class="delete-image rounded-lg bg-rose-500/80 px-3 py-2 text-xs font-semibold text-white"
                                         data-url="{{ route('admin.product-images.destroy', $img) }}"
                                         data-confirm="Hapus gambar ini?">
+                                    Hapus
+                                </button>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+
+            <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                    <label class="block text-sm font-semibold text-slate-200" for="variants">Varian (opsional)</label>
+                    <button type="button" id="add-variant-row" class="rounded-lg border border-slate-700 px-3 py-1.5 text-xs font-semibold text-slate-100 hover:border-sky-500/60">Tambah Varian</button>
+                </div>
+                <p class="text-xs text-slate-400">Setiap varian punya 1 gambar. Bisa tambah beberapa varian sekaligus.</p>
+                <div id="variant-rows" class="space-y-2">
+                    <!-- rows injected by JS -->
+                </div>
+                @if(!empty($product->variants) && $product->variants->count())
+                    <p class="text-xs text-slate-400 mt-2">Varian tersimpan (bisa ubah nama, gambar & urutan):</p>
+                    <div class="mt-2 space-y-2">
+                        @foreach($product->variants as $variant)
+                            <div class="grid grid-cols-[120px_1fr_auto] gap-3 items-center rounded-lg border border-slate-800 bg-slate-800/50 p-3">
+                                <div class="relative h-20 w-full rounded-md overflow-hidden border border-slate-700 existing-variant-preview" data-id="{{ $variant->id }}" style="background-image:url('{{ Storage::disk('public')->url($variant->image_path) }}'); background-size:cover; background-position:center;">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block text-xs text-slate-400">Nama varian</label>
+                                    <input type="text" name="existing_variant_names[{{ $variant->id }}]" value="{{ $variant->name }}" class="w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100">
+                                    <label class="block text-xs text-slate-400">Ganti gambar (opsional, maks 2MB)</label>
+                                    <input type="file" name="existing_variant_images[{{ $variant->id }}]" accept="image/*" class="w-full text-sm text-slate-200 file:mr-3 file:rounded-lg file:border-0 file:bg-slate-800 file:px-3 file:py-2 file:text-slate-100 hover:file:bg-slate-700">
+                                    <label class="block text-xs text-slate-400">Urutan</label>
+                                    <input type="number" name="existing_variant_sort_orders[{{ $variant->id }}]" value="{{ $variant->sort_order }}" min="0" class="w-24 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100">
+                                </div>
+                                <button type="button"
+                                        class="delete-variant rounded-lg bg-rose-500/80 px-3 py-2 text-xs font-semibold text-white"
+                                        data-url="{{ route('admin.product-variants.destroy', $variant) }}"
+                                        data-confirm="Hapus varian ini?">
                                     Hapus
                                 </button>
                             </div>

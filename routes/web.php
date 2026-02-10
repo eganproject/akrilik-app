@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductImageController;
+use App\Http\Controllers\ProductVariantController;
 use App\Http\Controllers\FeaturedCategoryController;
 use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::middleware('auth')->group(function () {
         Route::put('product-categories/{product_category}/order', [ProductCategoryController::class, 'updateOrder'])->name('product-categories.update-order');
         Route::resource('products', ProductController::class)->except(['show']);
         Route::delete('product-images/{product_image}', [ProductImageController::class, 'destroy'])->name('product-images.destroy');
+        Route::delete('product-variants/{product_variant}', [ProductVariantController::class, 'destroy'])->name('product-variants.destroy');
         Route::resource('featured-categories', FeaturedCategoryController::class)->only(['index','store','update','destroy']);
     });
 });

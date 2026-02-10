@@ -83,7 +83,13 @@ class LandingController extends Controller
 
     public function productShow(string $slug): View
     {
-        $product = Product::with(['category', 'images'])
+        $product = Product::with([
+            'category',
+            'images',
+            'variants' => function ($query) {
+                $query->where('is_active', true)->orderBy('sort_order');
+            },
+        ])
             ->where('slug', $slug)
             ->where('is_active', true)
             ->firstOrFail();

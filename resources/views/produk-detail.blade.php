@@ -73,6 +73,7 @@
             <div class="rounded-3xl p-4 md:p-6 relative overflow-visible">
                 <div class="relative z-10 space-y-4">
                     @php
+                        $variants = $product->variants ?? collect();
                         // Start with thumbnail (if any), then append product images (ordered by sort_order via relation)
                         $gallery = collect();
                         if ($product->thumbnail) {
@@ -84,6 +85,13 @@
                         $gallery = $gallery->merge($product->images->values());
                         // Fallback to placeholder if still empty
                         $activeImage = $gallery->first();
+                        if (! $activeImage && $variants->count()) {
+                            $firstVariant = $variants->first();
+                            $activeImage = (object)[
+                                'file_path' => $firstVariant->image_path,
+                                'alt_text' => $firstVariant->alt_text ?? $firstVariant->name,
+                            ];
+                        }
                     @endphp
                     <div id="main-image-wrapper" class="group relative bg-white rounded-2xl border-2 border-slate-50 flex items-center justify-center overflow-hidden shadow-sm cursor-zoom-in w-full h-[320px] sm:h-[360px] md:h-[420px] lg:h-[451px] max-w-full mx-auto">
                         @if($activeImage?->file_path)
@@ -138,6 +146,23 @@
                     </div>
                 @endif
 
+                @if($variants->count())
+                    <div class="space-y-3">
+                        <p class="text-sm font-semibold text-slate-700">Varian</p>
+                        <div class="flex flex-wrap gap-3">
+                            @foreach($variants as $variant)
+                                <button class="variant-btn flex items-center gap-3 rounded-2xl border {{ $loop->first && !($gallery->count()) ? 'border-brand-300 ring-2 ring-brand-200' : 'border-slate-200' }} bg-white px-3 py-2 transition hover:border-brand-300" data-src="{{ Storage::disk('public')->url($variant->image_path) }}" data-alt="{{ $variant->alt_text ?? $variant->name }}">
+                                    <span class="w-12 h-12 rounded-xl border border-slate-100 overflow-hidden flex items-center justify-center bg-slate-50">
+                                        <img src="{{ Storage::disk('public')->url($variant->image_path) }}" alt="{{ $variant->alt_text ?? $variant->name }}" class="w-full h-full object-cover">
+                                    </span>
+                                    <span class="text-xs sm:text-sm font-medium text-slate-700">{{ $variant->name }}</span>
+                                </button>
+                            @endforeach
+                        </div>
+                        <p class="text-xs text-slate-500">Klik varian untuk melihat gambar terkait.</p>
+                    </div>
+                @endif
+
                 <div class="flex flex-wrap gap-3 pt-2">
                     <a href="https://wa.me/6289517506300" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand-600 text-white font-semibold shadow-lg shadow-brand-500/30 hover:bg-brand-700 transition">
                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.359-5.292c0-5.443 4.428-9.87 9.87-9.87 2.636 0 5.116 1.026 6.98 2.889a9.839 9.839 0 012.893 6.975c-.003 5.444-4.432 9.87-9.877 9.87" fill-rule="evenodd" clip-rule="evenodd"/></svg> Hubungi Kami
@@ -174,11 +199,20 @@
     const imgWrapper = document.getElementById('main-image-wrapper');
     const mainImg = document.getElementById('main-product-image');
     const thumbs = Array.from(document.querySelectorAll('.thumb-btn'));
+    const variantBtns = Array.from(document.querySelectorAll('.variant-btn'));
     const prevBtn = document.getElementById('prev-image');
     const nextBtn = document.getElementById('next-image');
     const fullscreenBtn = document.getElementById('fullscreen-image');
     let currentIndex = thumbs.findIndex(btn => btn.classList.contains('ring-2'));
     if (currentIndex < 0) currentIndex = 0;
+    let currentVariantIndex = variantBtns.findIndex(btn => btn.classList.contains('ring-2'));
+    if (currentVariantIndex < 0) currentVariantIndex = 0;
+
+    function updateMain(src, alt) {
+        if (!mainImg) return;
+        mainImg.src = src;
+        mainImg.alt = alt || '';
+    }
 
     function setActive(index) {
         if (!thumbs.length) return;
@@ -192,13 +226,39 @@
         const activeBtn = thumbs[currentIndex];
         const src = activeBtn.dataset.src;
         const alt = activeBtn.dataset.alt || '';
-        mainImg.src = src;
-        mainImg.alt = alt;
+        updateMain(src, alt);
+        if (variantBtns.length) {
+            variantBtns.forEach(btn => {
+                btn.classList.remove('border-brand-300', 'ring-2', 'ring-brand-200');
+                btn.classList.add('border-slate-200');
+            });
+        }
     }
 
     thumbs.forEach((btn, idx) => btn.addEventListener('click', () => setActive(idx)));
     prevBtn?.addEventListener('click', () => setActive(currentIndex - 1));
     nextBtn?.addEventListener('click', () => setActive(currentIndex + 1));
+
+    function setVariantActive(index) {
+        if (!variantBtns.length) return;
+        currentVariantIndex = (index + variantBtns.length) % variantBtns.length;
+        variantBtns.forEach((btn, i) => {
+            btn.classList.toggle('border-brand-300', i === currentVariantIndex);
+            btn.classList.toggle('ring-2', i === currentVariantIndex);
+            btn.classList.toggle('ring-brand-200', i === currentVariantIndex);
+            btn.classList.toggle('border-slate-200', i !== currentVariantIndex);
+        });
+        const activeBtn = variantBtns[currentVariantIndex];
+        updateMain(activeBtn.dataset.src, activeBtn.dataset.alt || '');
+        if (thumbs.length) {
+            thumbs.forEach(btn => {
+                btn.classList.remove('border-brand-300', 'ring-2', 'ring-brand-200');
+                btn.classList.add('border-slate-200');
+            });
+        }
+    }
+
+    variantBtns.forEach((btn, idx) => btn.addEventListener('click', () => setVariantActive(idx)));
 
     // Swipe support for mobile
     if (mainImg && ('ontouchstart' in window)) {
