@@ -50,10 +50,6 @@
         }
     </script>
     <style>
-        body {
-            background-color: #0b0b0b;
-            color: #e2e8f0;
-        }
         .glass-nav {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(12px);
@@ -61,16 +57,16 @@
         }
         
         .category-item.active {
-            background-color: rgba(239, 68, 68, 0.15);
-            color: #fecaca;
+            background-color: #fef2f2;
+            color: #ef4444;
             border-right: 3px solid #ef4444;
         }
         .category-item.active svg { opacity: 1 !important; }
 
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 
 @endsection
@@ -89,20 +85,20 @@
             <!-- Sorting/Display/Search Bar -->
             <form method="GET" class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
                 <!-- Count -->
-                <p class="text-sm text-slate-400 order-2 md:order-1">Menampilkan <span id="product-count" class="font-bold text-slate-100">{{ $products->total() }}</span> Produk</p>
+                <p class="text-sm text-slate-500 order-2 md:order-1">Menampilkan <span id="product-count" class="font-bold text-slate-900">{{ $products->total() }}</span> Produk</p>
                 
                 <!-- Search Bar -->
                 <div class="order-1 md:order-2 w-full md:w-auto relative group">
                     <div class="absolute -inset-0.5 bg-gradient-to-r from-brand-200 to-purple-200 rounded-full blur opacity-20 group-hover:opacity-50 transition duration-300"></div>
-                    <input type="search" name="q" value="{{ $search }}" placeholder="Cari nama produk..." class="relative w-full md:w-80 pl-10 pr-4 py-2.5 rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-100 focus:ring-2 focus:ring-brand-500/40 focus:border-brand-500 outline-none transition-all text-sm placeholder:text-slate-500 shadow-sm">
-                    <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 z-10"></i>
+                    <input type="search" name="q" value="{{ $search }}" placeholder="Cari nama produk..." class="relative w-full md:w-80 pl-10 pr-4 py-2.5 rounded-full border border-slate-200 bg-white focus:ring-2 focus:ring-brand-100 focus:border-brand-500 outline-none transition-all text-sm placeholder:text-slate-400 shadow-sm">
+                    <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 z-10"></i>
                 </div>
 
                 <div class="flex items-center gap-3 order-3">
                     <!-- Sort -->
                     <div class="flex items-center gap-2">
-                        <span class="text-sm text-slate-400">Urutkan:</span>
-                        <select name="sort" data-auto-submit class="text-sm border border-slate-700 bg-slate-900 rounded-lg py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-brand-500 cursor-pointer font-medium text-slate-200 hover:text-brand-400 shadow-sm">
+                        <span class="text-sm text-slate-500">Urutkan:</span>
+                        <select name="sort" data-auto-submit class="text-sm border border-slate-200 bg-white rounded-lg py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-brand-500 cursor-pointer font-medium text-slate-700 hover:text-brand-600 shadow-sm">
                             <option value="latest" {{ $sort === 'latest' ? 'selected' : '' }}>Terbaru</option>
                             <option value="oldest" {{ $sort === 'oldest' ? 'selected' : '' }}>Terlama</option>
                             <option value="name_asc" {{ $sort === 'name_asc' ? 'selected' : '' }}>Nama A-Z</option>
@@ -111,8 +107,8 @@
                     </div>
                     <!-- Display Limit -->
                     <div class="flex items-center gap-2">
-                        <span class="text-sm text-slate-400">Tampilkan:</span>
-                        <select name="per_page" data-auto-submit class="text-sm border border-slate-700 bg-slate-900 rounded-lg py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-brand-500 cursor-pointer font-medium text-slate-200 hover:text-brand-400 shadow-sm">
+                        <span class="text-sm text-slate-500">Tampilkan:</span>
+                        <select name="per_page" data-auto-submit class="text-sm border border-slate-200 bg-white rounded-lg py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-brand-500 cursor-pointer font-medium text-slate-700 hover:text-brand-600 shadow-sm">
                             @foreach([8,20,40,80,100] as $size)
                                 <option value="{{ $size }}" {{ $perPage === $size ? 'selected' : '' }}>{{ $size }}</option>
                             @endforeach
@@ -129,18 +125,18 @@
                             @if($product->thumbnail)
                                 <img src="{{ \App\Support\MediaUrl::publicStorage($product->thumbnail) }}" alt="{{ $product->name }}" class="w-full h-full object-contain relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-xl">
                             @else
-                                <div class="w-full h-full bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center text-slate-500 text-sm font-semibold">{{ strtoupper(substr($product->name, 0, 2)) }}</div>
+                                <div class="w-full h-full bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center text-slate-400 text-sm font-semibold">{{ strtoupper(substr($product->name, 0, 2)) }}</div>
                             @endif
                         </div>
                         <div class="text-center px-2">
-                            <h3 class="font-display font-bold text-slate-100 text-lg leading-tight group-hover:text-brand-400 transition-colors line-clamp-2">{{ $product->name }}</h3>
-                            <p class="mt-3 text-sm font-medium text-slate-300 flex items-center justify-center gap-1 group-hover:text-brand-400 transition-colors">
+                            <h3 class="font-display font-bold text-slate-900 text-lg leading-tight group-hover:text-brand-600 transition-colors line-clamp-2">{{ $product->name }}</h3>
+                            <p class="mt-3 text-sm font-medium text-slate-400 flex items-center justify-center gap-1 group-hover:text-brand-600 transition-colors">
                                 Lihat Detail Produk <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                             </p>
                         </div>
                     </a>
                 @empty
-                    <div class="col-span-4 text-center text-slate-400">Produk belum tersedia.</div>
+                    <div class="col-span-4 text-center text-slate-500">Produk belum tersedia.</div>
                 @endforelse
             </div>
 
@@ -151,11 +147,11 @@
                     {{-- Previous --}}
                     @php $prev = $links[0]; @endphp
                     @if ($prev['url'])
-                        <a href="{{ $prev['url'] }}" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:border-brand-500 hover:text-brand-400 transition-colors">
+                        <a href="{{ $prev['url'] }}" class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:border-brand-500 hover:text-brand-500 transition-colors">
                             <i data-lucide="chevron-left" class="w-4 h-4"></i>
                         </a>
                     @else
-                        <span class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-600 cursor-not-allowed">
+                        <span class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-300 cursor-not-allowed">
                             <i data-lucide="chevron-left" class="w-4 h-4"></i>
                         </span>
                     @endif
@@ -163,10 +159,10 @@
                     {{-- Pages --}}
                     @foreach (array_slice($links, 1, -1) as $link)
                         @if ($link['label'] === '...')
-                            <span class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500">...</span>
+                            <span class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-400">...</span>
                         @else
                             @php $isActive = $link['active']; @endphp
-                            <a href="{{ $link['url'] ?? '#' }}" class="w-10 h-10 rounded-lg {{ $isActive ? 'bg-brand-600 text-white font-bold' : 'bg-slate-900 border border-slate-800 text-slate-300 hover:border-brand-500 hover:text-brand-400 font-medium' }} flex items-center justify-center transition-colors">
+                            <a href="{{ $link['url'] ?? '#' }}" class="w-10 h-10 rounded-lg {{ $isActive ? 'bg-brand-600 text-white font-bold' : 'bg-white border border-slate-200 text-slate-600 hover:border-brand-500 hover:text-brand-500 font-medium' }} flex items-center justify-center transition-colors">
                                 {{ $link['label'] }}
                             </a>
                         @endif
@@ -175,11 +171,11 @@
                     {{-- Next --}}
                     @php $next = $links[count($links)-1]; @endphp
                     @if ($next['url'])
-                        <a href="{{ $next['url'] }}" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:border-brand-500 hover:text-brand-400 transition-colors">
+                        <a href="{{ $next['url'] }}" class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:border-brand-500 hover:text-brand-500 transition-colors">
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
                         </a>
                     @else
-                        <span class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-600 cursor-not-allowed">
+                        <span class="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-slate-300 cursor-not-allowed">
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
                         </span>
                     @endif
