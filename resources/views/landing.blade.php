@@ -208,7 +208,7 @@
                         Produk akrilik custom seperti frame poster, rak brosur, rak kopi, menu stand, dan display meja. Desain modern, potongan presisi, dan finishing bening untuk tampil profesional sejak pandangan pertama.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 reveal-item">
-                        <a href="https://wa.me/6289517506300" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
+                        <a href="https://wa.me/6285385136547" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
                             Konsultasi Gratis
                         </a>
                         <a href="{{ route('kategori') }}" class="px-8 py-4 rounded-full border border-white/30 text-white font-semibold backdrop-blur-sm hover:bg-white/10 transition-all">
@@ -484,7 +484,7 @@
             <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 reveal-item">Siap Punya Display Akrilik yang Rapi?</h2>
             <p class="text-slate-200 text-lg mb-10 max-w-3xl mx-auto reveal-item">Konsultasikan kebutuhan frame poster, rak brosur, rak kopi, dan display lainnya. Kami bantu dari desain sampai produksi.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-item">
-                <a href="https://wa.me/6289517506300" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
+                <a href="https://wa.me/6285385136547" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
                     Hubungi Kami
                 </a>
                 <a href="{{ route('kategori') }}" class="px-8 py-4 rounded-full border border-white/30 text-white font-semibold backdrop-blur-sm hover:bg-white/10 transition-all">
