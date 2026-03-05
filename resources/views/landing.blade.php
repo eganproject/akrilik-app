@@ -200,12 +200,14 @@
                         <span class="text-xs uppercase tracking-[0.35em] text-slate-200">Akrilik Teknika</span>
                     </div>
                     <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] reveal-item">
-                        Display Akrilik <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 via-white to-brand-300">Rapi & Premium</span>
-                        untuk Brand, Toko, dan Kafe.
+                        Display Akrilik   <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 via-white to-brand-300">Premium</span>
+                        untuk Meningkatkan Citra Brand Anda
                     </h1>
                     <p class="text-lg sm:text-xl text-slate-200/90 max-w-2xl reveal-item">
-                        Produk akrilik custom seperti frame poster, rak brosur, rak kopi, menu stand, dan display meja. Desain modern, potongan presisi, dan finishing bening untuk tampil profesional sejak pandangan pertama.
+                        Rapi. Elegan. Profesional.
+Solusi display modern untuk toko, cafe, dan bisnis Anda.
+
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 reveal-item">
                         <a href="https://wa.me/6285385136547" class="px-8 py-4 rounded-full bg-brand-500 text-white font-bold shadow-xl shadow-brand-500/30 hover:bg-brand-600 transition-all">
@@ -346,7 +348,7 @@
                         Jajaran Display Akrilik <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Favorit Bisnis.</span>
                     </h2>
                     <p class="text-slate-600 mt-4 max-w-2xl">
-                        Frame poster, rak brosur, rak kopi, menu stand, display meja, hingga signage. Semua bisa dibuat sesuai ukuran dan kebutuhan brand Anda.
+                        Frame poster, rak brosur, rak kopi, menu stand, display meja, hingga signage. Semua tersedia sesuai ukuran dan kebutuhan brand Anda.
                     </p>
                 </div>
                 <a href="/kategori" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
@@ -404,10 +406,10 @@
                 <div class="reveal-item">
                     <p class="text-brand-600 font-bold tracking-[0.3em] uppercase text-xs mb-3">Keunggulan Produksi</p>
                     <h3 class="font-display text-4xl md:text-5xl font-bold text-slate-900">
-                        Akrilik Presisi <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Finishing Bening.</span>
+                        Akrilik Presisi <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-500">Finishing Sempurna.</span>
                     </h3>
                     <p class="text-slate-600 mt-5 text-lg">
-                        Kami mengolah akrilik dengan cutting, bending, dan polishing presisi untuk hasil rapi, kuat, dan terlihat profesional di setiap sudut.
+                        Kami menghadirkan produk akrilik siap pakai dengan standar presisi tinggi melalui proses laser cutting, bending, dan polishing detail untuk hasil yang rapi, kuat, dan tampak profesional di setiap sudut.
                     </p>
                     <div class="mt-8 h-[2px] bg-slate-200 w-full relative overflow-visible rounded-full max-w-[200px]">
                         <div class="reveal-line absolute top-0 left-0 h-full bg-gradient-to-r from-brand-500 via-brand-300 to-accent-500 animate-pulse-soft"></div>
@@ -422,27 +424,35 @@
                                     <i data-lucide="sparkles" class="w-6 h-6"></i>
                                 </span>
                                 <div>
-                                    <p class="text-xs uppercase tracking-[0.35em] text-slate-300">AT Acrylic Lab</p>
-                                    <h4 class="font-display text-2xl font-bold">Blueprint Display Custom</h4>
+                                    <p class="text-xs uppercase tracking-[0.35em] text-slate-300">PROFESSIONAL ACRYLIC DISPLAY</p>
+                                    <h4 class="font-display text-2xl font-bold">Built for Business Performance</h4>
                                 </div>
                             </div>
                             <div class="space-y-3 text-slate-200/80 text-sm">
                                 <div class="flex items-center gap-3">
-                                    <span class="w-2 h-2 rounded-full bg-brand-300"></span>
-                                    <p>Desain custom sesuai ukuran, fungsi, dan identitas brand.</p>
+                                    {{-- <span class="w-2 h-2 rounded-full bg-brand-300"></span> --}}
+                                    <p>Dirancang untuk menunjang aktivitas bisnis dengan tampilan rapi dan daya tahan optimal.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-brand-300"></span>
-                                    <p>Cutting, bending, dan polishing untuk tepi halus.</p>
+                                    <p>Material akrilik kuat & tahan lama.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-brand-300"></span>
-                                    <p>Finishing rapi untuk tampilan bening dan profesional.</p>
+                                    <p>Desain minimalis profesional.</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-brand-300"></span>
+                                    <p>Mudah dibersihkan & higienis.</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-2 h-2 rounded-full bg-brand-300"></span>
+                                    <p>Cocok untuk penggunaan intensif harian.</p>
                                 </div>
                             </div>
                             <div class="mt-8 flex items-center justify-between">
-                                <div class="text-xs text-slate-400">Premium Assurance</div>
-                                <div class="text-xs font-semibold text-brand-200">Gold Standard</div>
+                                <div class="text-xs text-slate-400">Commercial Grade Quality — </div>
+                                <div class="text-xs font-semibold text-brand-200">Business Ready</div>
                             </div>
                         </div>
                     </div>
@@ -455,21 +465,21 @@
                         <i data-lucide="settings" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-xl font-bold text-slate-900 mb-3">Potong Presisi</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Laser cutting akurat menjaga ukuran konsisten dan bentuk tetap rapi.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Teknologi laser cutting memastikan ukuran akurat dan bentuk konsisten.</p>
                 </div>
                 <div class="reveal-item delay-100 group p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-500/40 hover:shadow-xl transition-all duration-500">
                     <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-5 border border-brand-100">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
                     <h4 class="text-xl font-bold text-slate-900 mb-3">Finishing Halus</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Polishing detail membuat akrilik bening, bersih, dan nyaman dilihat.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Proses polishing menghasilkan tepi halus dan permukaan jernih yang meningkatkan kesan premium.</p>
                 </div>
                 <div class="reveal-item delay-200 group p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-500/40 hover:shadow-xl transition-all duration-500">
                     <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-5 border border-brand-100">
-                        <i data-lucide="headphones" class="w-6 h-6"></i>
+                        <i data-lucide="box" class="w-6 h-6"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3">Custom Fleksibel</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Bisa menyesuaikan ukuran, fungsi, dan branding sesuai kebutuhan bisnis.</p>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Ready Stock & Siap Pakai</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Produk tersedia dalam ukuran dan model yang sudah dirancang optimal.</p>
                 </div>
             </div>
         </div>

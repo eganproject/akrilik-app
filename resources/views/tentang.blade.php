@@ -141,30 +141,22 @@
 
                 <!-- Text Content -->
                 <div class="reveal-on-scroll" style="transition-delay: 200ms;">
-                    <h2 class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">SIAPA KAMI</h2>
-                    <h3 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Tumbuh Bersama AT !</h3>
+                    {{-- <h2 class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-4">SIAPA KAMI</h2> --}}
+                    <h3 class="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">Solusi Display Profesional untuk Brand & Retail Modern</h3>
                     <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
                         <p>
-                            Akrilik Teknika (AT) adalah perusahaan yang fokus menyediakan beragam aksesoris pemasaran
-                            berkualitas di Indonesia. Kami berdedikasi menjadi mitra terpercaya bagi bisnis-bisnis di
-                            berbagai sektor yang membutuhkan produk pemasaran yang andal.
+                            Akrilik Teknika (AT) adalah mitra terpercaya dalam penyediaan display dan aksesoris pemasaran berbahan akrilik untuk kebutuhan retail, F&B, franchise, dan corporate di Indonesia.
                         </p>
                         <p>
-                            Dengan pengalaman dan dedikasi tinggi, kami telah mengembangkan jaringan distribusi yang luas,
-                            menjangkau toko-toko di berbagai wilayah di Indonesia.
+                           Dengan pengalaman lebih dari 5 tahun, kami telah menangani ratusan proyek custom dengan standar produksi presisi dan kontrol kualitas yang konsisten.
                         </p>
                         <p>
-                            Sebagai distributor terpercaya, Akrilik Teknika memberikan pelayanan yang profesional dan
-                            produk-produk yang teruji kualitasnya.
+                            Kami memahami bahwa tampilan display bukan sekadar pelengkap, melainkan bagian dari strategi branding dan peningkatan pengalaman pelanggan. Karena itu, setiap produk dirancang untuk tampil rapi, elegan, dan memperkuat citra profesional bisnis Anda.
                         </p>
                         <p>
-                            Kami berkomitmen untuk terus mendukung para pelaku bisnis dengan menyediakan aksesoris pemasaran
-                            yang membantu mereka mengembangkan dan memaksimalkan potensi bisnis.
+                            Didukung tim produksi berpengalaman dan sistem kerja yang terstruktur, kami memastikan setiap pesanan selesai tepat waktu dengan kualitas terbaik
                         </p>
-                        <p>
-                            Kami memahami kebutuhan pasar yang terus berkembang, sehingga kami terus berinovasi untuk
-                            menawarkan produk yang relevan dan memenuhi standar industri yang tinggi.
-                        </p>
+                       
                     </div>
                     <div class="mt-8 pt-8 border-t border-slate-100 flex items-center gap-8">
                         <img src="{{ asset('public/assets/images/logo/logo.png') }}" alt="Signature"
