@@ -108,6 +108,17 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+
+        .about-carousel-slide {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 700ms ease;
+        }
+
+        .about-carousel-slide.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 @endsection
 
@@ -124,8 +135,37 @@
                 <!-- Image Composition -->
                 <div class="relative reveal-on-scroll">
                     <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200">
-                        <img src="{{ asset('public/assets/images/about.jpeg') }}"
-                            alt="Akrilik Teknika Office Team" class="w-full h-auto object-cover">
+                        <div id="about-carousel" class="relative h-72 sm:h-80 md:h-[420px] lg:h-[460px]">
+                            <div class="about-carousel-slide is-active absolute inset-0" data-carousel-slide>
+                                <img src="{{ asset('public/assets/images/about.jpeg') }}"
+                                    alt="Akrilik Teknika Office Team" class="w-full h-full object-cover">
+                            </div>
+                            <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
+                                <img src="{{ asset('public/storage/assets/images/products/gallery/4QzyNzHTuNIpOaehenItXyeG8Rxx6reNHJdc5KGc.jpg') }}"
+                                    alt="Proses produksi display akrilik" class="w-full h-full object-cover">
+                            </div>
+                            <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
+                                <img src="{{ asset('public/storage/assets/images/products/gallery/MOBZZHYSx2gE35CC7Q9EwPTjbmuTA1irQySbrTOX.jpg') }}"
+                                    alt="Hasil display akrilik custom" class="w-full h-full object-cover">
+                            </div>
+
+                            <button type="button" data-carousel-prev
+                                class="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white/85 text-slate-800 shadow-lg ring-1 ring-white/40 backdrop-blur hover:bg-white transition">
+                                <svg class="w-5 h-5 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                                <span class="sr-only">Sebelumnya</span>
+                            </button>
+                            <button type="button" data-carousel-next
+                                class="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white/85 text-slate-800 shadow-lg ring-1 ring-white/40 backdrop-blur hover:bg-white transition">
+                                <svg class="w-5 h-5 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                                <span class="sr-only">Berikutnya</span>
+                            </button>
+                        </div>
                     </div>
                     <!-- Floater Stats -->
                     <div
@@ -363,8 +403,73 @@
             }
         }
 
+        function initAboutCarousel() {
+            const carousel = document.getElementById('about-carousel');
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+            const prevBtn = carousel.querySelector('[data-carousel-prev]');
+            const nextBtn = carousel.querySelector('[data-carousel-next]');
+
+            if (!slides.length) return;
+
+            let currentIndex = 0;
+            let timer = null;
+
+            const setActiveSlide = (index) => {
+                currentIndex = index;
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('is-active', i === currentIndex);
+                });
+            };
+
+            const nextSlide = () => setActiveSlide((currentIndex + 1) % slides.length);
+            const prevSlide = () => setActiveSlide((currentIndex - 1 + slides.length) % slides.length);
+
+            const stopAuto = () => {
+                if (timer) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+            };
+
+            const startAuto = () => {
+                if (slides.length <= 1) return;
+                stopAuto();
+                timer = setInterval(nextSlide, 4500);
+            };
+
+            setActiveSlide(0);
+
+            if (slides.length <= 1) {
+                prevBtn?.classList.add('hidden');
+                nextBtn?.classList.add('hidden');
+                return;
+            }
+
+            prevBtn?.addEventListener('click', () => {
+                stopAuto();
+                prevSlide();
+                startAuto();
+            });
+
+            nextBtn?.addEventListener('click', () => {
+                stopAuto();
+                nextSlide();
+                startAuto();
+            });
+
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
+            carousel.addEventListener('focusin', stopAuto);
+            carousel.addEventListener('focusout', startAuto);
+
+            startAuto();
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             showCategory('interactive');
+            initAboutCarousel();
         });
 
         // Navbar Scroll Effect
