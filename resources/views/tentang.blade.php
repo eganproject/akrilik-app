@@ -137,16 +137,28 @@
                     <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200">
                         <div id="about-carousel" class="relative h-72 sm:h-80 md:h-[420px] lg:h-[460px]">
                             <div class="about-carousel-slide is-active absolute inset-0" data-carousel-slide>
-                                <img src="{{ asset('public/assets/images/about.jpeg') }}"
-                                    alt="Akrilik Teknika Office Team" class="w-full h-full object-cover">
+                                <img src="{{ asset('public/assets/images/about/Picture1.jpg') }}"
+                                    alt="Kegiatan Akrilik Teknika 1" class="w-full h-full object-cover">
                             </div>
                             <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
-                                <img src="{{ asset('public/storage/assets/images/products/gallery/4QzyNzHTuNIpOaehenItXyeG8Rxx6reNHJdc5KGc.jpg') }}"
-                                    alt="Proses produksi display akrilik" class="w-full h-full object-cover">
+                                <img src="{{ asset('public/assets/images/about/Picture2.jpg') }}"
+                                    alt="Kegiatan Akrilik Teknika 2" class="w-full h-full object-cover">
                             </div>
                             <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
-                                <img src="{{ asset('public/storage/assets/images/products/gallery/MOBZZHYSx2gE35CC7Q9EwPTjbmuTA1irQySbrTOX.jpg') }}"
-                                    alt="Hasil display akrilik custom" class="w-full h-full object-cover">
+                                <img src="{{ asset('public/assets/images/about/Picture3.jpg') }}"
+                                    alt="Kegiatan Akrilik Teknika 3" class="w-full h-full object-cover">
+                            </div>
+                            <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
+                                <img src="{{ asset('public/assets/images/about/Picture4.jpg') }}"
+                                    alt="Kegiatan Akrilik Teknika 4" class="w-full h-full object-cover">
+                            </div>
+                            <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
+                                <img src="{{ asset('public/assets/images/about/Picture5.jpg') }}"
+                                    alt="Kegiatan Akrilik Teknika 5" class="w-full h-full object-cover">
+                            </div>
+                            <div class="about-carousel-slide absolute inset-0" data-carousel-slide>
+                                <img src="{{ asset('public/assets/images/about/Picture6.jpg') }}"
+                                    alt="Kegiatan Akrilik Teknika 6" class="w-full h-full object-cover">
                             </div>
 
                             <button type="button" data-carousel-prev
