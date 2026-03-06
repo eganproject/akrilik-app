@@ -195,21 +195,21 @@
     <section id="home" class="relative min-h-screen overflow-hidden bg-slate-950 text-white">
         <div class="absolute inset-0" id="hero-slideshow">
             <div class="hero-slide is-active absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture7.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/1.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture8.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/2.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture9.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/3.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture10.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/4.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture11.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/5.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture12.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/6.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture13.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/7.jpg') }}');"></div>
             <div class="hero-slide absolute inset-0" data-hero-slide
-                style="background-image: url('{{ asset('public/assets/images/hero/Picture14.jpg') }}');"></div>
+                style="background-image: url('{{ asset('public/assets/images/hero/8.jpg') }}');"></div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/60 to-slate-950"></div>
         <div class="absolute inset-0 hero-grid"></div>
