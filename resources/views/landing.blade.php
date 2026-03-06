@@ -276,7 +276,16 @@ Solusi display modern untuk toko, cafe, dan bisnis Anda.
                         <p class="mt-4 text-slate-200/80 text-sm">Paket display akrilik untuk area kasir, meja promo, etalase, hingga booth event. Cocok untuk menonjolkan produk dan informasi penting.</p>
 
                         <div class="mt-6 overflow-hidden rounded-2xl border border-white/10">
-                            <div class="h-40 w-full bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/about.jpeg') }}');"></div>
+                            <div class="grid grid-cols-4 grid-rows-2 gap-1 h-40 w-full">
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/1.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/2.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/3.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/4.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/5.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/6.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/7.jpg') }}');"></div>
+                                <div class="bg-center bg-cover" style="background-image: url('{{ asset('public/assets/images/hero/8.jpg') }}');"></div>
+                            </div>
                         </div>
 
                         <div class="mt-6 grid grid-cols-2 gap-4">
