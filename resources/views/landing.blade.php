@@ -79,6 +79,16 @@
             background-size: cover;
             background-position: center;
         }
+        .hero-slide {
+            opacity: 0;
+            transition: opacity 1.2s ease;
+            background-size: cover;
+            background-position: center;
+            will-change: opacity;
+        }
+        .hero-slide.is-active {
+            opacity: 1;
+        }
         .glass-nav {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(12px);
@@ -183,7 +193,24 @@
 
 @section('content')
     <section id="home" class="relative min-h-screen overflow-hidden bg-slate-950 text-white">
-        <div class="absolute inset-0 lux-hero-bg"></div>
+        <div class="absolute inset-0" id="hero-slideshow">
+            <div class="hero-slide is-active absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture7.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture8.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture9.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture10.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture11.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture12.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture13.jpg') }}');"></div>
+            <div class="hero-slide absolute inset-0" data-hero-slide
+                style="background-image: url('{{ asset('public/assets/images/hero/Picture14.jpg') }}');"></div>
+        </div>
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/60 to-slate-950"></div>
         <div class="absolute inset-0 hero-grid"></div>
         <div class="absolute inset-0 hero-dots"></div>
@@ -539,5 +566,18 @@ Solusi display modern untuk toko, cafe, dan bisnis Anda.
         document.querySelectorAll('.reveal-item').forEach((el) => {
             observer.observe(el);
         });
+
+        const heroSlides = document.querySelectorAll('[data-hero-slide]');
+        if (heroSlides.length > 1) {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                let currentSlide = 0;
+                setInterval(() => {
+                    heroSlides[currentSlide].classList.remove('is-active');
+                    currentSlide = (currentSlide + 1) % heroSlides.length;
+                    heroSlides[currentSlide].classList.add('is-active');
+                }, 1500);
+            }
+        }
     </script>
 @endsection
