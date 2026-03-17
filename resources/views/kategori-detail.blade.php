@@ -99,6 +99,7 @@
                     <div class="flex items-center gap-2">
                         <span class="text-sm text-slate-500">Urutkan:</span>
                         <select name="sort" data-auto-submit class="text-sm border border-slate-200 bg-white rounded-lg py-1.5 pl-3 pr-8 focus:ring-1 focus:ring-brand-500 cursor-pointer font-medium text-slate-700 hover:text-brand-600 shadow-sm">
+                            <option value="order" {{ $sort === 'order' ? 'selected' : '' }}>Urutan</option>
                             <option value="latest" {{ $sort === 'latest' ? 'selected' : '' }}>Terbaru</option>
                             <option value="oldest" {{ $sort === 'oldest' ? 'selected' : '' }}>Terlama</option>
                             <option value="name_asc" {{ $sort === 'name_asc' ? 'selected' : '' }}>Nama A-Z</option>

@@ -44,6 +44,7 @@
                 <thead class="bg-slate-900 text-slate-400">
                     <tr class="border-b border-slate-800">
                         <th class="px-4 py-3 text-left">#</th>
+                        <th class="px-4 py-3 text-left">Urutan</th>
                         <th class="px-4 py-3 text-left">Produk</th>
                         <th class="px-4 py-3 text-left">Kategori</th>
                         <th class="px-4 py-3 text-left">Status</th>
@@ -55,6 +56,14 @@
                     @forelse($products as $index => $product)
                         <tr class="hover:bg-slate-800/50">
                             <td class="px-4 py-3">{{ $products->firstItem() + $index }}</td>
+                            <td class="px-4 py-3">
+                                <form action="{{ route('admin.products.update-order', $product) }}" method="POST" class="flex items-center gap-2">
+                                    @csrf
+                                    @method('PUT')
+                                    <input type="number" name="sort_order" value="{{ $product->sort_order ?? 0 }}" min="0" class="w-20 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100">
+                                    <button class="rounded-lg border border-slate-700 px-2 py-1 text-xs font-semibold text-slate-100 hover:border-sky-500/60">Simpan</button>
+                                </form>
+                            </td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center gap-3">
                                     @if($product->thumbnail)
@@ -88,7 +97,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" class="px-4 py-6 text-center text-slate-500">Belum ada produk.</td>
+                            <td colspan="7" class="px-4 py-6 text-center text-slate-500">Belum ada produk.</td>
                         </tr>
                     @endforelse
                 </tbody>

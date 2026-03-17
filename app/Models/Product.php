@@ -14,6 +14,7 @@ class Product extends Model
         'product_category_id',
         'name',
         'slug',
+        'sort_order',
         'thumbnail',
         'excerpt',
         'description',
@@ -25,6 +26,9 @@ class Product extends Model
         static::creating(function (Product $product) {
             if (empty($product->slug)) {
                 $product->slug = Str::slug($product->name);
+            }
+            if ($product->sort_order === null) {
+                $product->sort_order = (static::max('sort_order') ?? 0) + 1;
             }
         });
     }

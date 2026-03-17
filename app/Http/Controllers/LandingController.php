@@ -42,7 +42,7 @@ class LandingController extends Controller
             $perPage = 8;
         }
 
-        $sort = $request->get('sort', 'latest');
+        $sort = $request->get('sort', 'order');
 
         $productsQuery = Product::where('product_category_id', $category->id)
             ->where('is_active', true);
@@ -56,6 +56,9 @@ class LandingController extends Controller
         }
 
         switch ($sort) {
+            case 'order':
+                $productsQuery->orderBy('sort_order')->orderByDesc('created_at');
+                break;
             case 'name_asc':
                 $productsQuery->orderBy('name');
                 break;
@@ -65,9 +68,12 @@ class LandingController extends Controller
             case 'oldest':
                 $productsQuery->orderBy('created_at');
                 break;
-            default:
+            case 'latest':
                 $productsQuery->orderByDesc('created_at');
-                $sort = 'latest';
+                break;
+            default:
+                $productsQuery->orderBy('sort_order')->orderByDesc('created_at');
+                $sort = 'order';
         }
 
         $products = $productsQuery->paginate($perPage)->withQueryString();

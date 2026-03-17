@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('product-categories', ProductCategoryController::class)->except(['show']);
         Route::put('product-categories/{product_category}/order', [ProductCategoryController::class, 'updateOrder'])->name('product-categories.update-order');
         Route::resource('products', ProductController::class)->except(['show']);
+        Route::put('products/{product}/order', [ProductController::class, 'updateOrder'])->name('products.update-order');
         Route::delete('product-images/{product_image}', [ProductImageController::class, 'destroy'])->name('product-images.destroy');
         Route::delete('product-variants/{product_variant}', [ProductVariantController::class, 'destroy'])->name('product-variants.destroy');
         Route::resource('featured-categories', FeaturedCategoryController::class)->only(['index','store','update','destroy']);

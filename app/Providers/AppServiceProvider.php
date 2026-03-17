@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
             $productsByCategory = Product::with('category')
                 ->where('is_active', true)
                 ->whereIn('product_category_id', $navCategories->pluck('id'))
+                ->orderBy('sort_order')
                 ->orderByDesc('created_at')
                 ->get()
                 ->groupBy('product_category_id');
